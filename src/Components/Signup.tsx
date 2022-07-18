@@ -1,11 +1,11 @@
 /* eslint-disable max-len */
 import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUser, faAt, faChevronRight} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faAt, faChevronRight, faLock} from '@fortawesome/free-solid-svg-icons';
 
 import './style/signup.css';
 import './style/login.css';
-import {nextCliqued} from './utils/login';
+import {nextCliqued, onChecked} from './utils/signup';
 
 export default function Signup() {
   const [inc, add] = useState(1);
@@ -51,7 +51,23 @@ export default function Signup() {
                 />
               </div>
             </div>
-            <div className="inactive" id="partie-2"></div>
+            <div className="inactive" id="partie-2">
+              <div className="FormField">
+                <FontAwesomeIcon icon={faLock} className="icon-input" />
+                <input className="input" type="password" required placeholder="password" id="pass1" />
+              </div>
+              <div className="FormField">
+                <FontAwesomeIcon icon={faLock} className="icon-input" />
+                <input className="input" type="password" required placeholder="Confirm" id="pass2" />
+              </div>
+              <div className="CheckBox">
+                <label className="checkBox-txt">
+                  <input type="checkbox" name="check-box" id="check-inp" onChange={onChecked} />
+                  <span>Show password</span>
+                </label>
+              </div>
+            </div>
+            <div className="inactive" id="partie-3"></div>
             <div
               className="button-submit"
               onClick={(e) => {

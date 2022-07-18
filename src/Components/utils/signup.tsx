@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 
-export function displayErrorEmail() {
+function displayErrorEmail() {
   const emailInp = document.getElementById('email') as HTMLInputElement;
   let message: string;
     emailInp.value ? (message = 'Email does not respect format') : (message = 'Please complete this field');
@@ -23,7 +23,7 @@ export function nextCliqued(
   return !regex.test(emailInp.value) || !emailInp.value ? displayErrorEmail() : displayNextdiv(e, inc, add);
 }
 
-export function displayNextdiv(
+function displayNextdiv(
     e: React.FormEvent<HTMLElement>,
     inc: number,
     add: React.Dispatch<React.SetStateAction<number>>,
@@ -37,4 +37,17 @@ export function displayNextdiv(
   }
   add(inc + 1);
   e.preventDefault();
+}
+
+export function onChecked() {
+  const checkInp = document.getElementById('check-inp') as HTMLInputElement;
+  const passwordInp = document.getElementById('pass1') as HTMLInputElement;
+  const passwordConfirm = document.getElementById('pass2') as HTMLInputElement;
+  if (checkInp.checked) {
+    passwordInp.type = 'text';
+    passwordConfirm.type = 'text';
+  } else {
+    passwordInp.type = 'password';
+    passwordConfirm.type = 'password';
+  }
 }
