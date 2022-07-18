@@ -5,36 +5,10 @@ import {faUser, faAt, faChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 import './style/signup.css';
 import './style/login.css';
+import {nextCliqued} from './utils/login';
 
 export default function Signup() {
   const [inc, add] = useState(1);
-  const nextCliqued = (e: React.FormEvent<HTMLElement>) => {
-    const emailInp = document.getElementById('email') as HTMLInputElement;
-    const firstName = document.getElementById('firstName') as HTMLInputElement;
-    const lastName = document.getElementById('lastName') as HTMLInputElement;
-    if (!firstName.value || !lastName.value) {
-      return;
-    }
-    const regex = new RegExp(/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/);
-    return !regex.test(emailInp.value) || !emailInp.value ? displayErrorEmail() : displayNextdiv(e);
-  };
-  function displayNextdiv(e: React.FormEvent<HTMLElement>) {
-    const inactiveDiv = document.getElementById('partie-' + inc) as HTMLElement;
-    inactiveDiv.className = 'inactive';
-    const j: number = inc + 1;
-    const activeDiv = document.getElementById('partie-' + j);
-    if (activeDiv != null) {
-      activeDiv.className = 'active';
-    }
-    add(inc + 1);
-    e.preventDefault();
-  }
-  const displayErrorEmail = () => {
-    const emailInp = document.getElementById('email') as HTMLInputElement;
-    let message: string;
-        emailInp.value ? (message = 'Email does not respect format') : (message = 'Please complete this field');
-        emailInp.setCustomValidity(message);
-  };
   return (
     <div className="container-login">
       <div className="screen">
@@ -78,7 +52,12 @@ export default function Signup() {
               </div>
             </div>
             <div className="inactive" id="partie-2"></div>
-            <div className="button-submit" onClick={nextCliqued}>
+            <div
+              className="button-submit"
+              onClick={(e) => {
+                nextCliqued(e, inc, add);
+              }}
+            >
               <div className="bg-btn"></div>
               <button className="btn-submit">
                 <span className="btn-label">Next</span>
