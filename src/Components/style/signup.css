@@ -79,6 +79,32 @@
         width: 80%;
     }
 }
+#partie-3 {
+    /* Chrome, Safari, Edge, Opera */
+    /* Firefox */
+}
+#partie-3 input::-webkit-outer-spin-button,
+#partie-3 input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+#partie-3 input[type='tel'] {
+    -moz-appearance: textfield;
+}
+
+#input-number {
+    border: 1px solid #d1d1d4;
+    font-weight: 700;
+    transition: 0.2s;
+    outline: none;
+    cursor: pointer;
+}
+#input-number:hover,
+#input-number:focus,
+#input-number:active {
+    border-color: #4c489d;
+}
+
 @media screen and (max-width: 370px) {
     #partie-2 .error-content,
     #partie-2 .error-content-true {
