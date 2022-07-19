@@ -18,7 +18,7 @@ export default function Signup() {
       <div className="screen">
         <div className="form-content">
           <form className="login">
-            <div className="inactive" id="partie-1">
+            <div className="active" id="partie-1">
               <div className="GruppeFields">
                 <div className="FormField">
                   <FontAwesomeIcon icon={faUser} className="icon-input" />
@@ -86,7 +86,7 @@ export default function Signup() {
                 </span>
               </div>
             </div>
-            <div className="active" id="partie-3">
+            <div className="inactive" id="partie-3">
               <div className="FormField">
                 <Input
                   value={number}
