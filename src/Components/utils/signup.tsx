@@ -13,6 +13,41 @@ export function nextCliqued(
     inc: number,
     add: React.Dispatch<React.SetStateAction<number>>,
 ) {
+  if (inc === 1) {
+    verifyPartie1Form(e, inc, add);
+  } else if (inc === 2) {
+    verifyPartie2Form(e, inc, add);
+  }
+}
+
+function verifyPartie2Form(
+    e: React.FormEvent<HTMLElement>,
+    inc: number,
+    add: React.Dispatch<React.SetStateAction<number>>,
+) {
+  const pass1 = document.getElementById('pass1') as HTMLInputElement;
+  const passwordConfirm = document.getElementById('pass2') as HTMLInputElement;
+  const errorContent = document.getElementById('error-content') as HTMLElement;
+  const regex = new RegExp(/^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9].*[0-9])(?=.*[a-z].*[a-z].*[a-z]).{8,}$/);
+  console.log(regex.test(pass1.value));
+  if (!regex.test(pass1.value)) {
+    errorContent.className = 'error-content-true';
+    e.preventDefault();
+    return;
+  }
+  errorContent.style.display = 'none';
+    passwordConfirm.value !== pass1.value ? displayErrorPassword(passwordConfirm) : displayNextdiv(e, inc, add);
+}
+
+function displayErrorPassword(passwordInp: HTMLInputElement) {
+  passwordInp.setCustomValidity('the two fields passwords are different');
+}
+
+function verifyPartie1Form(
+    e: React.FormEvent<HTMLElement>,
+    inc: number,
+    add: React.Dispatch<React.SetStateAction<number>>,
+) {
   const emailInp = document.getElementById('email') as HTMLInputElement;
   const firstName = document.getElementById('firstName') as HTMLInputElement;
   const lastName = document.getElementById('lastName') as HTMLInputElement;

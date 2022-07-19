@@ -54,4 +54,37 @@
 }
 #check-inp:checked::before {
     transform: scale(1);
+}
+
+#partie-2 .error-content,
+#partie-2 .error-content-true {
+    box-sizing: border-box;
+    margin-top: 1rem;
+    width: 60%;
+    padding: 1rem 0rem 0.1rem 1rem;
+    background: rgba(221, 221, 221, 0.85);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#partie-2 .error-content-true {
+    color: #f7444e;
+}
+
+@media screen and (max-width: 950px) {
+    #partie-2 .error-content,
+    #partie-2 .error-content-true {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 370px) {
+    #partie-2 .error-content,
+    #partie-2 .error-content-true {
+        width: 95%;
+    }
+    .container-login .screen .form-content .login .button-submit {
+        margin-top: 0.5rem;
+    }
 } /*# sourceMappingURL=signup.css.map */

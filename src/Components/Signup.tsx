@@ -66,6 +66,18 @@ export default function Signup() {
                   <span>Show password</span>
                 </label>
               </div>
+              <div className="error-content" id="error-content">
+                <span className="error-msg">
+                                    Password must have a minimum :
+                  <ul>
+                    <li>8 characteres length</li>
+                    <li> 1 uppercase letter</li>
+                    <li> 1 lowercase letter</li>
+                    <li> 1 number </li>
+                    <li> 1 special character </li>
+                  </ul>
+                </span>
+              </div>
             </div>
             <div className="inactive" id="partie-3"></div>
             <div
