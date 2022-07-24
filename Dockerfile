@@ -10,5 +10,9 @@ WORKDIR /usr/src/app
 COPY package.json* package-lock.json* ./
 RUN npm ci
 
+#install husky hooks
+RUN npm run husky-install
+RUN npx husky add .husky/pre-commit "npm run lint-staged"
+
 # Copy the remaining source code
 COPY . .
