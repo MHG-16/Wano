@@ -12,7 +12,13 @@ RUN npm ci
 
 #install husky hooks
 RUN npm run husky-install
-RUN npx husky add .husky/pre-commit "npm run lint-staged"
+RUN npx husky add .husky/pre-commit 
 
 # Copy the remaining source code
 COPY . .
+
+
+EXPOSE 8083
+
+# start app
+CMD ["npm", "start"]
