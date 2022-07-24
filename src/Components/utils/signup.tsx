@@ -36,7 +36,13 @@ function verifyPartie2Form(
     return;
   }
   errorContent.style.display = 'none';
-    passwordConfirm.value !== pass1.value ? displayErrorPassword(passwordConfirm) : displayNextdiv(e, inc, add);
+  if (passwordConfirm.value !== pass1.value) {
+    displayErrorPassword(passwordConfirm);
+  } else {
+    const btn = document.getElementById('submit') as HTMLButtonElement;
+    btn.innerText = 'submit';
+    displayNextdiv(e, inc, add);
+  }
 }
 
 function displayErrorPassword(passwordInp: HTMLInputElement) {

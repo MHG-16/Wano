@@ -31,3 +31,6 @@ yarn-error.log*
 #sass
 *.scss
 *.sass
+
+#other files  
+signup2.css

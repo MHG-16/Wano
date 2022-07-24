@@ -18,7 +18,7 @@ export default function Signup() {
       <div className="screen">
         <div className="form-content">
           <form className="login">
-            <div className="inactive" id="partie-1">
+            <div className="active" id="partie-1">
               <div className="GruppeFields">
                 <div className="FormField">
                   <FontAwesomeIcon icon={faUser} className="icon-input" />
@@ -86,7 +86,7 @@ export default function Signup() {
                 </span>
               </div>
             </div>
-            <div className="active" id="partie-3">
+            <div className="inactive" id="partie-3">
               <div className="FormField">
                 <Input
                   value={number}
@@ -106,27 +106,68 @@ export default function Signup() {
                 />
               </div>
               <div>Date de naissance :</div>
-              <div className='FormField'>
-                <FontAwesomeIcon icon={faCalendar} className="icon-input"/>
-                <input type="date" className="input"/>
+              <div className="FormField">
+                <FontAwesomeIcon icon={faCalendar} className="icon-input" />
+                <input type="date" className="input" />
               </div>
-              <div className='FormField'>
-                Genre :
+              <div className="FormField FormFieldRadios">
+                <input type="radio" name="genre" value="masculin" id="masculin" checked />
                 <label htmlFor="masculin">
-                  <input type="radio" name="masculin" value="masculin" id="masculin"/>
-                  <FontAwesomeIcon icon={faMars} className="icon-input-radio"/>
-                  <span className="input-radio-txt"> Man </span>
+                  <span></span>
+                  <label className="input-radio-txt"> Man</label>
+                  <FontAwesomeIcon icon={faMars} className="icon-input-radio" />
                 </label>
-                <label>
-                  <input type="radio" name="feminine" value="feminine" id="feminine"/>
-                  <FontAwesomeIcon icon={faVenus} className="icon-input-radio"/>
-                  <span className="input-radio-txt"> Woman </span>
+                <input type="radio" name="genre" value="feminine" id="feminine" />
+                <label htmlFor="feminine">
+                  <span></span> <label className="input-radio-txt"> Woman</label>
+                  <FontAwesomeIcon icon={faVenus} className="icon-input-radio" />
                 </label>
+                <div className="worm">
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                  <div className="worm__segment"></div>
+                </div>
               </div>
               <div className="CheckBox">
                 <label className="checkBox-txt">
-                  <input type="checkbox" name="check-box" id="check-inp" onChange={onChecked} />
-                  <span>I accept the license utilisation of the cookies and sessions for better UX</span>
+                  <input
+                    type="checkbox"
+                    name="check-box"
+                    id="check-inp"
+                    onChange={onChecked}
+                    required
+                  />
+                  <span className="text-license">
+                                        I accept the license utilisation of the cookies and sessions for better UX
+                  </span>
                 </label>
               </div>
             </div>
@@ -137,7 +178,7 @@ export default function Signup() {
               }}
             >
               <div className="bg-btn"></div>
-              <button className="btn-submit">
+              <button className="btn-submit" id="submit">
                 <span className="btn-label">Next</span>
                 <FontAwesomeIcon icon={faChevronRight} className="btn-sub-icon" />
               </button>
