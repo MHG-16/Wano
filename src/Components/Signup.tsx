@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React, {useState} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUser, faAt, faChevronRight, faLock} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faAt, faChevronRight, faLock, faCalendar, faMars, faVenus} from '@fortawesome/free-solid-svg-icons';
 import Input from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 
@@ -18,7 +18,7 @@ export default function Signup() {
       <div className="screen">
         <div className="form-content">
           <form className="login">
-            <div className="active" id="partie-1">
+            <div className="inactive" id="partie-1">
               <div className="GruppeFields">
                 <div className="FormField">
                   <FontAwesomeIcon icon={faUser} className="icon-input" />
@@ -86,7 +86,7 @@ export default function Signup() {
                 </span>
               </div>
             </div>
-            <div className="inactive" id="partie-3">
+            <div className="active" id="partie-3">
               <div className="FormField">
                 <Input
                   value={number}
@@ -104,6 +104,30 @@ export default function Signup() {
                     maxlength: 18,
                   }}
                 />
+              </div>
+              <div>Date de naissance :</div>
+              <div className='FormField'>
+                <FontAwesomeIcon icon={faCalendar} className="icon-input"/>
+                <input type="date" className="input"/>
+              </div>
+              <div className='FormField'>
+                Genre :
+                <label htmlFor="masculin">
+                  <input type="radio" name="masculin" value="masculin" id="masculin"/>
+                  <FontAwesomeIcon icon={faMars} className="icon-input-radio"/>
+                  <span className="input-radio-txt"> Man </span>
+                </label>
+                <label>
+                  <input type="radio" name="feminine" value="feminine" id="feminine"/>
+                  <FontAwesomeIcon icon={faVenus} className="icon-input-radio"/>
+                  <span className="input-radio-txt"> Woman </span>
+                </label>
+              </div>
+              <div className="CheckBox">
+                <label className="checkBox-txt">
+                  <input type="checkbox" name="check-box" id="check-inp" onChange={onChecked} />
+                  <span>I accept the license utilisation of the cookies and sessions for better UX</span>
+                </label>
               </div>
             </div>
             <div
